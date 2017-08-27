@@ -1,9 +1,9 @@
-var persona = require('../schemas/persona');
+var persona = require('../schemas/person');
 var boom = require('boom');
 
-exports.createPersona = {
+exports.createPerson = {
 	handler: function(request,reply){
-		var newPersona = new persona({
+		var newPerson = new person({
 			name : request.payload.name
 		});
 
