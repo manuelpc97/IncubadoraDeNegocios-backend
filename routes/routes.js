@@ -9,6 +9,6 @@ exports.endpoints = [
 	{
 		method : 'POST',
 		path: '/IDN/createPersona',
-		config: persona.createPersona;
+		config: persona.createPersona
 	}
 ]
