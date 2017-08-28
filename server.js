@@ -1,20 +1,16 @@
 var hapi = require('hapi');
 var inert = require('inert');
 var mongoose = require('mongoose');
-var routes = require('./routes/routes');
-var auth = require('hapi-auth-cookie');
+var routes = require('./routes/routes.js');
+//var auth = require('hapi-auth-cookie');
 
 var server = new hapi.Server();
 server.connection({
-   port: ~~process.env.PORT || 8000,
-   routes: { cors: {
-              credentials: true,
-              origin: ['*']
-            }
-          }
-   });
+    port: process.env.PORT || 8000,
+    routes: {cors: true}
+});
 
-mongoose.Promise = global.Promise;
+//mongoose.connect('mongodb://localhost:27017/IncubadoraDeNegocios');
 mongoose.connect('mongodb://127.0.0.1:27017/IncubadoraDeNegocios');
 
 var db = mongoose.connection;
@@ -23,18 +19,19 @@ db.once('open', function callback() {
     console.log("Connection with database succeeded.");
 });
 
-server.register([inert, auth], function(err){
+server.register([inert], function(err){
 
-  server.auth.strategy('session', 'cookie', {
-    password: 'cookie-auth-password-for-encryption',
-    cookie: 'IncubadoraDeNegocios-cookie',
-    ttl: 24 * 60 * 60 * 1000,
+ /*server.auth.strategy('session', 'cookie', {
+    password: 'secretpasswordforencryption',
+    cookie: 'angular-scaffold-cookie',
+    ttl: 24 * 60 * 60 * 1000, // Set session to 1 day
     isSecure: false
-  });
+  });*/
 
   server.route(routes.endpoints);
+  
 
   server.start(function () {
-	    console.log('Server running at:', server.info.uri);
-    });
+      console.log('Server running at:', server.info.uri);
+  });
 });

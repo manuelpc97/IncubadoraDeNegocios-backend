@@ -1,4 +1,4 @@
-var persona = require('../controllers/personaController');
+var business = require('../controllers/businessController');
 
 exports.endpoints = [
 	{
@@ -8,7 +8,27 @@ exports.endpoints = [
 	}, 
 	{
 		method : 'POST',
-		path: '/IDN/createPersona',
-		config: persona.createPersona
+		path: '/createBusiness',
+		config: business.createBusiness
+	},
+	{
+		method: 'GET',
+		path: '/getBusiness', 
+		config: business.getBusiness
+	},
+	{
+		method: 'PUT',
+		path: '/updateBusiness/{id}',
+		config: business.updateBusiness
+	},
+	{
+		method: 'DELETE',
+		path: '/deleteBusiness/{id}',
+		config: business.deleteBusiness
+	},
+	{
+		method: 'GET', 
+		path: '/getBusinessByCode/{code}',
+		config: business.getBusinessByCode
 	}
 ]
