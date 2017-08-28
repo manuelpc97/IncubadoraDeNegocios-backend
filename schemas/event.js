@@ -1,10 +1,11 @@
 var mongoose = require('mongoose');
 
 var eventSchema = new mongoose.Schema({
+    IDEvent: Number,
     name: String,
     description: String,
     dateAndTime: Date,
-    listaOfPeople: Array,
+    listOfPeople: Array,
     status: Boolean  
 });
 
