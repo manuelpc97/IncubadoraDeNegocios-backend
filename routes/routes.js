@@ -1,5 +1,8 @@
 var business = require('../controllers/businessController');
 var group = require('../controllers/groupController');
+var message = require('../controllers/messageController');
+var task = require('../controllers/taskController');
+
 
 exports.endpoints = [
 	{
@@ -51,5 +54,35 @@ exports.endpoints = [
 		method: 'DELETE', 
 		path: '/deleteGroup/{id}', 
 		config: group.deleteGroup
+	},
+	{
+		method: 'POST',
+		path: '/createMessage',
+		config: message.createMessage
+	},
+	{
+		method: 'GET', 
+		path: '/getMessages', 
+		config: message.getMessages
+	},
+	{
+		method: 'POST', 
+		path: '/createTask', 
+		config: task.createTask
+	},
+	{
+		method: 'GET', 
+		path: '/getTasks', 
+		config: task.getTasks
+	},
+	{
+		method: 'PUT', 
+		path: '/updateTask/{id}', 
+		config: task.updateTask
+	}, 
+	{
+		method: 'DELETE',
+		path: '/deleteTask/{id}', 
+		config: task.deleteTask
 	}
 ]
