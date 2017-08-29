@@ -25,14 +25,14 @@ exports.createChat = {
             }
         }).sort({ _id: -1 });
     }
-}
+};
 
 exports.getChats = {
     handler: function (request, reply) {
         var chats = chat.find({});
         return reply(chats);
     }
-}
+};
 
 exports.deleteChat = {
     handler: function (request, reply) {
@@ -45,7 +45,7 @@ exports.deleteChat = {
             }
         })
     }
-}
+};
 
 exports.addPersonToChat = {
     handler: function (request, reply) {
@@ -58,7 +58,7 @@ exports.addPersonToChat = {
             }
         });
     }
-}
+};
 
 exports.deletePersonInChat = {
     handler: function (request, reply) {
@@ -71,7 +71,7 @@ exports.deletePersonInChat = {
             }
         });
     }
-}
+};
 
 exports.addMessageToChat = {
     handler: function (request, reply) {
@@ -84,7 +84,7 @@ exports.addMessageToChat = {
             }
         });
     }
-}
+};
 
 exports.deleteMessageInChat = {
     handler: function (request, reply) {
@@ -97,4 +97,4 @@ exports.deleteMessageInChat = {
             }
         });
     }
-}
+};

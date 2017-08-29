@@ -42,18 +42,18 @@ exports.createPerson = {
 			}
 		}).sort({ _id: -1 });
 	}
-}
+};
 
 exports.getPeople = {
 	handler: function (request, reply) {
 		var People = person.find({});
 		return reply(People);
 	}
-}
+};
 
 exports.editPerson = {
 	handler: function (request, reply) {
-		var Person = person.find({ IDPerson: request.params.ID });
+		var Person = person.find({ IDPerson: request.params.IDPerson });
 		temp.update({ $set: request.payload }, function (err) {
 			if (err) {
 				reply('Error');
@@ -62,7 +62,7 @@ exports.editPerson = {
 			}
 		});
 	}
-}
+};
 
 exports.deletePerson = {
 	handler: function (request, reply) {
@@ -75,53 +75,53 @@ exports.deletePerson = {
 			}
 		})
 	}
-}
+};
 
 exports.getPersonByName = {
 	handler: function (request, reply) {
 		var personByName = person.find({ name: request.params.name });
 		reply(personByName);
 	}
-}
+};
 
 exports.getPersonByUsername = {
 	handler: function (request, reply) {
 		var personByUsername = person.find({ username: request.params.username });
 		reply(personByName);
 	}
-}
+};
 
 exports.getPersonByAge = {
 	handler: function (request, reply) {
 		var personByAge = person.find({ age: request.params.age });
 		reply(personByAge);
 	}
-}
+};
 
 exports.getPersonByEmail = {
 	handler: function (request, reply) {
 		var personByEmail = person.find({ email: request.params.email });
 		reply(personByEmail);
 	}
-}
+};
 
 exports.getPersonByPhone = {
 	handler: function (request, reply) {
 		var personByPhone = person.find({ phone: request.params.phone });
 		reply(personByPhone);
 	}
-}
+};
 
 exports.getPersonByProfession = {
 	handler: function (request, reply) {
 		var personByProfession = person.find({ profession: request.params.profession });
 		reply(personByProfession);
 	}
-}
+};
 
 exports.getPersonByAddress = {
 	handler: function (request, reply) {
 		var personByAddress = person.find({ address: request.params.address });
 		reply(personByAddress);
 	}
-}
+};

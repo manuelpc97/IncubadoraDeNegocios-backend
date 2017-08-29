@@ -28,14 +28,14 @@ exports.createEvent = {
             }
         }).sort({ _id: -1 });
     }
-}
+};
 
 exports.getEvents = {
     handler: function (request, reply) {
         var events = event.find({});
         return reply(events);
     }
-}
+};
 
 exports.deleteEvent = {
     handler: function (request, reply) {
@@ -48,14 +48,14 @@ exports.deleteEvent = {
             }
         })
     }
-}
+};
 
 exports.getEventByName = {
     handler: function (request, reply) {
         var eventByName = person.find({ name: request.params.name });
         reply(eventByName);
     }
-}
+};
 
 exports.editEvent = {
     handler: function (request, reply) {
@@ -68,7 +68,7 @@ exports.editEvent = {
             }
         });
     }
-}
+};
 
 exports.addPersonToEvent = {
     handler: function (request, reply) {
@@ -81,7 +81,7 @@ exports.addPersonToEvent = {
             }
         });
     }
-}
+};
 
 exports.deletePersonInEvent = {
     handler: function (request, reply) {
@@ -94,4 +94,4 @@ exports.deletePersonInEvent = {
             }
         });
     }
-}
+};

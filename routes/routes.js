@@ -1,6 +1,7 @@
 var person = require('../controllers/personController');
 var event = require('../controllers/eventController');
-var chat = require('../controllers/chatController')
+var chat = require('../controllers/chatController');
+var advertisement = require('../controllers/advertisementController');
 
 exports.endpoints = [
 	{
@@ -148,5 +149,38 @@ exports.endpoints = [
 		method: 'PUT',
 		path: '/IDN/addMessageToChat',
 		config: chat.addMessageToChat
+	}
+],
+
+exports.endpoints = [
+	{
+		method: 'GET', 
+		path: '/', 
+		config: {handler: function(request, reply){reply('API IDN, Incubadora de Negocios')}}
+	},
+	{
+		method: 'POST',
+		path: '/IDN/createAdvertisement',
+		config: advertisement.createAdvertisement
+	},
+	{
+		method: 'GET',
+		path: '/IDN/getAdvertisements',
+		config: advertisement.getAdvertisements
+	},
+	{
+		method: 'GET',
+		path: '/IDN/getAdvertisementByName',
+		config: advertisement.getAdvertisementByName
+	},
+	{
+		method: 'PUT',
+		path: '/IDN/editAdvertisement',
+		config: advertisement.editAdvertisement
+	},
+	{
+		method: 'DELETE',
+		path: '/IDN/deleteAdvertisement',
+		config: advertisement.deleteAdvertisement
 	}
 ]
