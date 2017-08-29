@@ -60,4 +60,60 @@ exports.deleteGroup = {
 				}
 			});
 	}
-}
+}; 
+
+exports.addMember = {
+	handler: function(request,reply){
+		var groups = group.find({idGroup: request.params.id});
+		groups.update({$push: {members: request.payload.member}}, 
+			function(err){
+				if(err){
+					reply('Error');
+				}else{
+					reply('Ok');
+				}
+			});
+	}
+};
+
+exports.addEvent = {
+	handler: function(request, reply){
+		var temp = group.find({idGroup: request.params.id});
+		temp.update({$push: {events: request.payload.event}},
+			function(err){
+				if(err){
+					reply('Error');
+				}else{
+					reply('Ok');
+				}
+			});
+	}
+};
+
+exports.removeMember = {
+	handler: function(request,reply){
+		var temp = group.find({idGroup: request.params.id});
+		temp.update({$pull: {members: request.payload.member}},
+			function(err){
+				if(err){
+					reply('Error');
+				}else{
+					reply('Ok');
+				}
+			});
+	}
+};
+
+exports.removeEvent = {
+	handler: function(request,reply){
+		var temp = group.find({idGroup: request.params.id});
+		temp.update({$pull: {members: request.payload.member}},
+			function(err){
+				if(err){
+					reply('Error');
+				}else{
+					reply('Ok');
+				}
+			});
+	}
+};

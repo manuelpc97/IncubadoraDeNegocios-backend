@@ -36,6 +36,16 @@ exports.endpoints = [
 		config: business.getBusinessByCode
 	},
 	{
+		method: 'PUT', 
+		path: '/addBusinessOwner/{id}',
+		config: business.addOwner
+	},
+	{
+		method: 'PUT', 
+		path: '/removeBusinessOwner/{id}',
+		config: business.removeOwner
+	},
+	{
 		method: 'POST',
 		path: '/createGroup',
 		config: group.createGroup
@@ -56,6 +66,26 @@ exports.endpoints = [
 		config: group.deleteGroup
 	},
 	{
+		method: 'PUT', 
+		path: '/addGroupMember/{id}',
+		config: group.addMember
+	},
+	{
+		method: 'PUT', 
+		path: '/addGroupEvent/{id}',
+		config: group.addEvent
+	},
+	{
+		method: 'PUT', 
+		path: '/removeGroupMember/{id}',
+		config: group.removeMember
+	},
+	{
+		method: 'PUT', 
+		path: '/removeGroupEvent/{id}',
+		config: group.removeEvent
+	},
+	{
 		method: 'POST',
 		path: '/createMessage',
 		config: message.createMessage
@@ -66,6 +96,11 @@ exports.endpoints = [
 		config: message.getMessages
 	},
 	{
+		method: 'GET', 
+		path: '/getMessageByChat', 
+		config: message.getMessageByChat
+	},
+	{
 		method: 'POST', 
 		path: '/createTask', 
 		config: task.createTask
@@ -74,6 +109,21 @@ exports.endpoints = [
 		method: 'GET', 
 		path: '/getTasks', 
 		config: task.getTasks
+	},
+	{
+		method: 'GET', 
+		path: '/getTasksByAdviser/{id}', 
+		config: task.getTasksByAdviser
+	},
+	{
+		method: 'GET', 
+		path: '/getTasksByBusiness/{id}', 
+		config: task.getTasksByBusiness
+	},
+	{
+		method: 'GET', 
+		path: '/getTasksByAdviserAndBusiness/{idA},{idB}', 
+		config: task.getTasksByAdviserAndBusiness
 	},
 	{
 		method: 'PUT', 

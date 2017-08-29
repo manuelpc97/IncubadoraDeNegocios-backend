@@ -37,6 +37,28 @@ exports.getTasks = {
 	}
 };
 
+exports.getTasksByAdviser = {
+	handler: function(request, reply){
+		var temp = task.find({idAdviser: request.params.id});
+		return reply(temp);
+	}
+};
+
+exports.getTasksByBusiness = {
+	handler: function(request, reply){
+		var temp = task.find({idBusiness: request.params.id});
+		return reply(temp);
+	}
+};
+
+exports.getTasksByAdviserAndBusiness = {
+	handler: function(request, reply){
+		var temp = task.find({idAdviser: request.params.idA, 
+			idBusiness: request.params.idB});
+		return reply(temp);
+	}
+};
+
 exports.updateTask = {
 	handler: function(request,reply){
 		var temp = task.find({idTask: request.params.id});

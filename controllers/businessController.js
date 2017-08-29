@@ -82,3 +82,31 @@ exports.getBusinessByCode = {
         reply(query);
     }
 };
+
+exports.addOwner = {
+    handler: function(request, reply){
+        var temp = business.find({idBusiness: request.params.id});
+        temp.update({$push: {idOwners: request.payload.owner}},
+            function(err){
+                if(err){
+                    reply('Error');
+                }else{
+                    reply('Ok');
+                }
+            });
+    }
+};
+
+exports.removeOwner = {
+    handler: function(request,reply){
+        var temp = business.find({idBusiness: request.params.id});
+        temp.update({$pull: {idOwners: request.payload.owner}},
+            function(err){
+                if(err){
+                    reply('Error');
+                }else{
+                    reply('Ok');
+                }
+            });
+    }
+};

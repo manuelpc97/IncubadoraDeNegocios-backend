@@ -33,4 +33,11 @@ exports.getMessages = {
 		var messages = message.find({});
 		return reply(messages);
 	}
-}
+};
+
+exports.getMessageByChat = {
+	handler: function(request,reply){
+		var temp = message.find({idChat: request.params.id});
+		return reply(temp);
+	}
+};
