@@ -1,4 +1,6 @@
 var person = require('../controllers/personController');
+var event = require('../controllers/eventController');
+var chat = require('../controllers/chatController')
 
 exports.endpoints = [
 	{
@@ -60,5 +62,91 @@ exports.endpoints = [
 		method: 'GET',
 		path: '/IDN/getPersonByUsername',
 		config: person.getPersonByUsername
+	}
+],
+
+exports.endpoints = [
+	{
+		method: 'GET', 
+		path: '/', 
+		config: {handler: function(request, reply){reply('API IDN, Incubadora de Negocios')}}
+	},
+	{
+		method: 'POST',
+		path: '/IDN/createEvent',
+		config: event.createEvent
+	},
+	{
+		method: 'GET',
+		path: '/IDN/getEvents',
+		config: event.getEvents
+	},
+	{
+		method: 'GET',
+		path: '/IDN/getEventByName',
+		config: event.getEventByName
+	},
+	{
+		method: 'DELETE',
+		path: '/IDN/deleteEvent',
+		config: event.deleteEvent
+	},
+	{
+		method: 'PUT',
+		path: '/IDN/editEvent',
+		config: event.editEvent
+	},
+	{
+		method: 'PUT',
+		path: '/IDN/addPersonToEvent',
+		config: event.addPersonToEvent
+	},
+	{
+		method: 'PUT',
+		path: '/IDN/deletePersonInEvent',
+		config: event.deletePersonInEvent
+	}
+],
+
+exports.endpoints = [
+	{
+		method: 'GET', 
+		path: '/', 
+		config: {handler: function(request, reply){reply('API IDN, Incubadora de Negocios')}}
+	},
+	{
+		method: 'POST',
+		path: '/IDN/createChat',
+		config: chat.createChat
+	},
+	{
+		method: 'GET',
+		path: '/IDN/getChats',
+		config: chat.getChats
+	},
+	{
+		method: 'DELETE',
+		path: '/IDN/deleteChat',
+		config: chat.deleteChat
+	},
+	{
+		method: 'PUT',
+		path: '/IDN/deletePersonInChat',
+		config: chat.deletePersonInChat
+	},
+	{
+		method: 'PUT',
+		path: '/IDN/deleteMessageInChat',
+		config: chat.deleteMessageInChat
+	},
+	{
+		method: 'PUT',
+		path: '/IDN/addPersonToChat',
+		config: chat.addPersonToChat
+	},
+	{
+		method: 'PUT',
+		path: '/IDN/addMessageToChat',
+		config: chat.addMessageToChat
 	}
 ]

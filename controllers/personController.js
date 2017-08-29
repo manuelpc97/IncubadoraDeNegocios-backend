@@ -79,49 +79,49 @@ exports.deletePerson = {
 
 exports.getPersonByName = {
 	handler: function (request, reply) {
-		var PersonByName = person.find({ name: request.params.name });
-		reply(PersonByName);
+		var personByName = person.find({ name: request.params.name });
+		reply(personByName);
 	}
 }
 
 exports.getPersonByUsername = {
 	handler: function (request, reply) {
-		var PersonByUsername = person.find({ username: request.params.username });
-		reply(PersonByName);
+		var personByUsername = person.find({ username: request.params.username });
+		reply(personByName);
 	}
 }
 
 exports.getPersonByAge = {
 	handler: function (request, reply) {
-		var PersonByAge = person.find({ age: request.params.age });
-		reply(PersonByAge);
+		var personByAge = person.find({ age: request.params.age });
+		reply(personByAge);
 	}
 }
 
 exports.getPersonByEmail = {
 	handler: function (request, reply) {
-		var PersonByEmail = person.find({ email: request.params.email });
-		reply(PersonByEmail);
+		var personByEmail = person.find({ email: request.params.email });
+		reply(personByEmail);
 	}
 }
 
 exports.getPersonByPhone = {
 	handler: function (request, reply) {
-		var PersonByPhone = person.find({ phone: request.params.phone });
-		reply(PersonByPhone);
+		var personByPhone = person.find({ phone: request.params.phone });
+		reply(personByPhone);
 	}
 }
 
 exports.getPersonByProfession = {
 	handler: function (request, reply) {
-		var PersonByProfession = person.find({ profession: request.params.profession });
-		reply(PersonByProfession);
+		var personByProfession = person.find({ profession: request.params.profession });
+		reply(personByProfession);
 	}
 }
 
 exports.getPersonByAddress = {
 	handler: function (request, reply) {
-		var PersonByAddress = person.find({ address: request.params.address });
-		reply(PersonByAddress);
+		var personByAddress = person.find({ address: request.params.address });
+		reply(personByAddress);
 	}
 }

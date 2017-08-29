@@ -2,8 +2,8 @@ var mongoose = require('mongoose');
 
 var chatSchema = new mongoose.Schema({
     IDChat: Number,
-    listaOfPeople: Array,
-    listaOfMessages: Array
+    listOfPeople: Array,
+    listOfMessages: Array
 });
 
 module.exports = mongoose.model('Chat', chatSchema);
