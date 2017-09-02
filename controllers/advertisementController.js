@@ -2,8 +2,12 @@ var advertisement = require('../schemas/advertisement');
 
 
 exports.createAdvertisement = {
+    auth: {
+        mode: 'required',
+        strategy: 'session',
+        scope: ['admin']
+    },
     handler: function (request, reply) {
-
         advertisement.find({}, 'IDAdvertisement', function (err, IDA) {
             if (!err) {
                 var ID = 0;
@@ -36,26 +40,36 @@ exports.getAdvertisements = {
 };
 
 exports.getAdvertisementByName = {
-	handler: function (request, reply) {
-		var advertisementByName = advertisement.find({ name: request.params.name });
-		reply(advertisementByName);
-	}
+    handler: function (request, reply) {
+        var advertisementByName = advertisement.find({ name: request.params.name });
+        reply(advertisementByName);
+    }
 };
 
 exports.editAdvertisement = {
-	handler: function (request, reply) {
-		var Advertisement = advertisement.find({ IDAdvertisement: request.params.IDAdvertisement });
-		Advertisement.update({ $set: request.payload }, function (err) {
-			if (err) {
-				reply('Error');
-			} else {
-				reply('Advertisement edited');
-			}
-		});
-	}
+    auth: {
+        mode: 'required',
+        strategy: 'session',
+        scope: ['admin']
+    },
+    handler: function (request, reply) {
+        var Advertisement = advertisement.find({ IDAdvertisement: request.params.IDAdvertisement });
+        Advertisement.update({ $set: request.payload }, function (err) {
+            if (err) {
+                reply('Error');
+            } else {
+                reply('Advertisement edited');
+            }
+        });
+    }
 };
 
 exports.deleteAdvertisement = {
+    auth: {
+        mode: 'required',
+        strategy: 'session',
+        scope: ['admin']
+    },
     handler: function (request, reply) {
         var advertisementByID = advertisement.findOne({ IDAdvertisement: request.params.IDAdvertisement });
         advertisementByID.remove(function (err) {

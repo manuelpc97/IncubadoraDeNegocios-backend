@@ -65,6 +65,16 @@ exports.endpoints = [
 		method: 'GET',
 		path: '/IDN/getPersonByUsername',
 		config: person.getPersonByUsername
+	}, 
+	{
+		method: 'PUT',
+		path: '/IDN/addFriend',
+		config: person.addFriend
+	}, 
+	{
+		method: 'PUT',
+		path: '/IDN/deleteFriend',
+		config: person.deleteFriend
 	}
 ],
 

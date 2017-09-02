@@ -28,12 +28,13 @@ exports.createPerson = {
 					phone: request.payload.phone,
 					profession: request.payload.profession,
 					address: request.payload.address,
-					image: request.payload.address
+					image: request.payload.address,
+					listOfFriends: request.payload.listOfFriends,
 				});
 
 				if (unique) {
 					newPerson.save();
-					reply('Person saved');	
+					reply('Person saved');
 				} else {
 					reply('Not unique');
 				}
@@ -124,4 +125,30 @@ exports.getPersonByAddress = {
 		var personByAddress = person.find({ address: request.params.address });
 		reply(personByAddress);
 	}
+};
+
+exports.addFriend = {
+    handler: function (request, reply) {
+        var friends = person.find({ IDPerson: request.params.IDPerson });
+        friends.update({ $push: { listOfFriends: request.payload.listOfFriends } }, function (err) {
+            if (err) {
+                reply('Error');
+            } else {
+                reply('Person added to friends');
+            }
+        });
+    }
+};
+
+exports.deleteFriend = {
+    handler: function (request, reply) {
+        var friends = person.find({ IDPerson: request.params.IDPerson });
+        chats.update({ $pull: { listOfFriends: request.payload.listOfFriends } }, function (err) {
+            if (err) {
+                reply('Error');
+            } else {
+                reply('person deleted from friends');
+            }
+        });
+    }
 };

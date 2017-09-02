@@ -9,7 +9,8 @@ var personSchema = new mongoose.Schema({
 	phone: String,
 	profession: String,
 	address: String,
-	image: String
+	image: String,
+	listOfFriends: Array,
 });
 
 module.exports = mongoose.model('Person', personSchema);
