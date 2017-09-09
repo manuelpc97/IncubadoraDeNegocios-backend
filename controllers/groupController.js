@@ -1,6 +1,11 @@
 var group = require('../schemas/group');
 
 exports.createGroup = {
+	auth: {
+        mode:'required',
+        strategy:'session',
+        scope: ['admin', 'regular']
+      },
 	handler:function(request,reply){
 		group.find({}, 'idGroup', function(err,idG){
 			if(!err){

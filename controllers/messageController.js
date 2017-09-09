@@ -1,6 +1,11 @@
 var message = require('../schemas/message');
 
 exports.createMessage = {
+	auth: {
+        mode:'required',
+        strategy:'session',
+        scope: ['admin', 'regular']
+      },
 	handler:function(request,reply){
 		message.find({},'idMessage', function(err,idM){
 			if(!err){
