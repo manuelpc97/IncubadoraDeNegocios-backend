@@ -2,8 +2,12 @@ var event = require('../schemas/event');
 
 
 exports.createEvent = {
+    auth: {
+        mode:'required',
+        strategy:'session',
+        scope: ['admin', 'regular']
+      },
     handler: function (request, reply) {
-
         event.find({}, 'IDEvent', function (err, IDE) {
             if (!err) {
                 var ID = 0;

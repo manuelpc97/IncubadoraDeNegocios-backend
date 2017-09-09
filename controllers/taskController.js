@@ -1,6 +1,11 @@
 var task = require('../schemas/task');
 
 exports.createTask = {
+	auth: {
+        mode:'required',
+        strategy:'session',
+        scope: ['admin', 'regular']
+      },
 	handler: function(request,reply){
 		task.find({}, 'idTask', function(err,idT){
 			if(!err){
