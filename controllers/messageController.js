@@ -41,3 +41,10 @@ exports.getMessages = {
 	}
 };
 
+exports.getMessageById = {
+	handler: function(request,reply){
+		var message2 = message.find({idMessage: request.params.id});
+		return reply(message2);
+	}
+}
+

@@ -88,6 +88,13 @@ exports.getBusinessByCode = {
     }
 };
 
+exports.getBusinessById = {
+    handler: function(request,reply){
+        var quer = business.find({idBusiness: request.params.id});
+        return reply(quer);
+    }
+};
+
 exports.addOwner = {
     handler: function(request, reply){
         var temp = business.find({idBusiness: request.params.id});

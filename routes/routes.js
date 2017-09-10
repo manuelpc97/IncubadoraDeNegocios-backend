@@ -105,6 +105,11 @@ exports.endpoints = [
 		config: business.getBusinessByCode
 	},
 	{
+		method: 'GET', 
+		path: '/getBusinessById/{id}', 
+		config: business.getBusinessById
+	},
+	{
 		method: 'PUT',
 		path: '/addBusinessOwner/{id}',
 		config: business.addOwner
@@ -123,6 +128,11 @@ exports.endpoints = [
 		method: 'GET',
 		path: '/getGroups',
 		config: group.getGroups
+	},
+	{
+		method: 'GET',
+		path: '/getGroupById/{id}',
+		config: group.getGroupById
 	},
 	{
 		method: 'PUT',
@@ -178,6 +188,11 @@ exports.endpoints = [
 		method: 'GET',
 		path: '/getTasksByAdviser/{id}',
 		config: task.getTasksByAdviser
+	},
+	{
+		method: 'GET', 
+		path: '/getMessageById/{id}', 
+		config: message.getMessageById
 	},
 	{
 		method: 'GET',

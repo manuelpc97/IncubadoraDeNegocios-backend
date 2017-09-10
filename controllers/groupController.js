@@ -37,8 +37,10 @@ exports.createGroup = {
 
 exports.getGroups = {
 	handler: function(request,reply){
+		console.log('Aqui');			
 		var groups = group.find({});
 		return reply(groups);
+
 	}
 };
 
@@ -121,5 +123,12 @@ exports.removeEvent = {
 					reply('Ok');
 				}
 			});
+	}
+};
+
+exports.getGroupById = {
+	handler: function(request,reply){
+		var groupById = group.find({idGroup: request.params.id});
+		return reply(groupById);
 	}
 };

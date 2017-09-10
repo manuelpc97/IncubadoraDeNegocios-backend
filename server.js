@@ -29,6 +29,7 @@ server.register([inert, auth], function(err){
   });
 
   server.route(routes.endpoints);
+  console.log(routes.endpoints.length);
   
 
   server.start(function () {

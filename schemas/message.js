@@ -3,7 +3,6 @@ var mongoose = require('mongoose');
 var messageSchema = new mongoose.Schema({
 	idMessage: Number,
 	idEmisor: Number,
-	idChat: Number,
 	body: String
 });
 
