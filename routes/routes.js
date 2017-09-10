@@ -79,8 +79,8 @@ exports.endpoints = [
 		method: 'PUT',
 		path: '/IDN/deleteFriend',
 		config: person.deleteFriend
- },
-   {
+ 	},
+   	{
 		method : 'POST',
 		path: '/createBusiness',
 		config: business.createBusiness
@@ -205,115 +205,114 @@ exports.endpoints = [
 		path: '/deleteTask/{id}', 
 		config: task.deleteTask
 	},
-  {
-			method: 'POST',
-			path: '/IDN/createChat',
-			config: chat.createChat
-		},
-		{
-			method: 'GET',
-			path: '/IDN/getChats',
-			config: chat.getChats
-		},
-		{
-			method: 'DELETE',
-			path: '/IDN/deleteChat',
-			config: chat.deleteChat
-		},
-		{
-			method: 'PUT',
-			path: '/IDN/deletePersonInChat',
-			config: chat.deletePersonInChat
-		},
-		{
-			method: 'PUT',
-			path: '/IDN/deleteMessageInChat',
-			config: chat.deleteMessageInChat
-		},
-		{
-			method: 'PUT',
-			path: '/IDN/addPersonToChat',
-			config: chat.addPersonToChat
-		},
-		{
-			method: 'PUT',
-			path: '/IDN/addMessageToChat',
-			config: chat.addMessageToChat
-		},
-    
-		{
-			method: 'POST',
-			path: '/IDN/createEvent',
-			config: event.createEvent
-		},
-		{
-			method: 'GET',
-			path: '/IDN/getEvents',
-			config: event.getEvents
-		},
-		{
-			method: 'GET',
-			path: '/IDN/getEventByName',
-			config: event.getEventByName
-		},
-		{
-			method: 'DELETE',
-			path: '/IDN/deleteEvent',
-			config: event.deleteEvent
-		},
-		{
-			method: 'PUT',
-			path: '/IDN/editEvent',
-			config: event.editEvent
-		},
-		{
-			method: 'PUT',
-			path: '/IDN/addPersonToEvent',
-			config: event.addPersonToEvent
-		},
-		{
-			method: 'PUT',
-			path: '/IDN/deletePersonInEvent',
-			config: event.deletePersonInEvent
-		},
     {
-			method: 'POST',
-			path: '/IDN/createAdvertisement',
-			config: advertisement.createAdvertisement
-		},
-		{
-			method: 'GET',
-			path: '/IDN/getAdvertisements',
-			config: advertisement.getAdvertisements
-		},
-		{
-			method: 'GET',
-			path: '/IDN/getAdvertisementByName',
-			config: advertisement.getAdvertisementByName
-		},
-		{
-			method: 'PUT',
-			path: '/IDN/editAdvertisement',
-			config: advertisement.editAdvertisement
-		},
-		{
-			method: 'DELETE',
-			path: '/IDN/deleteAdvertisement',
-			config: advertisement.deleteAdvertisement
-		},
+		method: 'POST',
+		path: '/IDN/createChat',
+		config: chat.createChat
+	},
+	{
+		method: 'GET',
+		path: '/IDN/getChats',
+		config: chat.getChats
+	},
+	{
+		method: 'DELETE',
+		path: '/IDN/deleteChat',
+		config: chat.deleteChat
+	},
+	{
+		method: 'PUT',
+		path: '/IDN/deletePersonInChat',
+		config: chat.deletePersonInChat
+	},
+	{
+		method: 'PUT',
+		path: '/IDN/deleteMessageInChat',
+		config: chat.deleteMessageInChat
+	},
+	{
+		method: 'PUT',
+		path: '/IDN/addPersonToChat',
+		config: chat.addPersonToChat
+	},
+	{
+		method: 'PUT',
+		path: '/IDN/addMessageToChat',
+		config: chat.addMessageToChat
+	},
+	{
+		method: 'POST',
+		path: '/IDN/createEvent',
+		config: event.createEvent
+	},
+	{
+		method: 'GET',
+		path: '/IDN/getEvents',
+		config: event.getEvents
+	},
+	{
+		method: 'GET',
+		path: '/IDN/getEventByName',
+		config: event.getEventByName
+	},
+	{
+		method: 'DELETE',
+		path: '/IDN/deleteEvent',
+		config: event.deleteEvent
+	},
+	{
+		method: 'PUT',
+		path: '/IDN/editEvent',
+		config: event.editEvent
+	},
+	{
+		method: 'PUT',
+		path: '/IDN/addPersonToEvent',
+		config: event.addPersonToEvent
+	},
+	{
+		method: 'PUT',
+		path: '/IDN/deletePersonInEvent',
+		config: event.deletePersonInEvent
+	},
     {
-			method: 'POST',
-			path: '/v1/register',
-			config: usersController.createUser
-		},
-		{
-			method: 'GET',
-			path: '/v1/logout',
-			config: authController.logout
-		},
-		{
-			method: 'POST',
-			path: '/v1/login',
-			config: authController.login
-		}
+		method: 'POST',
+		path: '/IDN/createAdvertisement',
+		config: advertisement.createAdvertisement
+	},
+	{
+		method: 'GET',
+		path: '/IDN/getAdvertisements',
+		config: advertisement.getAdvertisements
+	},
+	{
+		method: 'GET',
+		path: '/IDN/getAdvertisementByName',
+		config: advertisement.getAdvertisementByName
+	},
+	{
+		method: 'PUT',
+		path: '/IDN/editAdvertisement',
+		config: advertisement.editAdvertisement
+	},
+	{
+		method: 'DELETE',
+		path: '/IDN/deleteAdvertisement',
+		config: advertisement.deleteAdvertisement
+	},
+    {
+		method: 'POST',
+		path: '/v1/register',
+		config: usersController.createUser
+	},
+	{
+		method: 'GET',
+		path: '/v1/logout',
+		config: authController.logout
+	},
+	{
+		method: 'POST',
+		path: '/v1/login',
+		config: authController.login
+	}
 ]
