@@ -155,12 +155,93 @@ exports.addFriend = {
 exports.deleteFriend = {
 	handler: function (request, reply) {
 		var friends = person.find({ IDPerson: request.params.IDPerson });
-		chats.update({ $pull: { listOfFriends: request.payload.listOfFriends } }, function (err) {
+		friends.update({ $pull: { listOfFriends: request.payload.listOfFriends } }, function (err) {
 			if (err) {
 				reply('Error');
 			} else {
 				reply('person deleted from friends');
 			}
 		});
+	}
+};
+
+exports.addGroup = {
+	handler: function(request,reply){
+		var groups = person.find({IDPerson: request.params.IDPerson});
+		groups.update({$push: {groups: request.payload.group}},
+			function(err){
+				if(err){
+					reply('Error');
+				}else{
+					reply('Ok');
+				}
+			});
+	}
+};
+
+exports.removeGroup = {
+	handler: function(request,reply){
+		var groups = person.find({IDPerson: request.params.IDPerson});
+		groups.update({$pull: {groups: request.payload.group}},
+			function(err){
+				if(err){
+					reply('Error');
+				}else{
+					reply('Ok');
+				}
+			});
+	}
+};
+
+exports.addEvent = {
+	handler: function(request,reply){
+		var events = person.find({IDPerson: request.params.IDPerson});
+		events.update({$push: {events: request.payload.event}},
+			function(err){
+				if(err){
+					reply('Error');
+				}else{
+					reply('Ok');
+				}
+			});
+	}
+};
+exports.removeEvent = {
+	handler: function(request,reply){
+		var events = person.find({IDPerson: request.params.IDPerson});
+		events.update({$pull: {events: request.payload.event}},
+			function(err){
+				if(err){
+					reply('Error');
+				}else{
+					reply('Ok');
+				}
+			});
+	}
+};
+exports.addBusiness = {
+	handler: function(request,reply){
+		var business = person.find({IDPerson: request.params.IDPerson});
+		business.update({$push: {business: request.payload.business}},
+			function(err){
+				if(err){
+					reply('Error');
+				}else{
+					reply('Ok');
+				}
+			});
+	}
+};
+exports.removeBusiness = {
+	handler: function(request,reply){
+		var business = person.find({IDPerson: request.params.IDPerson});
+		business.update({$pull: {business: request.payload.business}},
+			function(err){
+				if(err){
+					reply('Error');
+				}else{
+					reply('Ok');
+				}
+			});
 	}
 };

@@ -318,5 +318,35 @@ exports.endpoints = [
 		method: 'POST',
 		path: '/IDN/login',
 		config: authController.login
-	}
+	},
+	{
+		method: 'PUT',
+		path: '/addGroupToPerson/{IDPerson}',
+		config: person.addGroup
+	},
+	{
+		method: 'PUT',
+		path: '/deleteGroupFromPerson/{IDPerson}',
+		config: person.removeGroup
+	},
+	{
+		method: 'PUT',
+		path: '/addEventToPerson/{IDPerson}',
+		config: person.addEvent
+	},
+	{
+		method: 'PUT',
+		path: '/deleteEventFromPerson/{IDPerson}',
+		config: person.removeEvent
+	},
+	{
+		method: 'PUT',
+		path: '/addBusinessToPerson/{IDPerson}',
+		config: person.addBusiness
+	},
+	{
+		method: 'PUT',
+		path: '/deleteBusinessFromPerson/{IDPerson}',
+		config: person.removeBusiness
+	}	
 ]
