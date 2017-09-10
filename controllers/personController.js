@@ -70,7 +70,7 @@ exports.getPeople = {
 exports.editPerson = {
 	handler: function (request, reply) {
 		var Person = person.find({ IDPerson: request.params.IDPerson });
-		temp.update({ $set: request.payload }, function (err) {
+		Person.update({ $set: request.payload }, function (err) {
 			if (err) {
 				reply('Error');
 			} else {
@@ -103,7 +103,7 @@ exports.getPersonByName = {
 exports.getPersonByUsername = {
 	handler: function (request, reply) {
 		var personByUsername = person.find({ username: request.params.username });
-		reply(personByName);
+		reply(personByUsername);
 	}
 };
 
@@ -181,7 +181,7 @@ exports.addGroup = {
 	}
 };
 
-exports.removeGroup = {
+exports.deleteGroup = {
 	handler: function (request, reply) {
 		var groups = person.find({ IDPerson: request.params.IDPerson });
 		groups.update({ $pull: { groups: request.payload.group } }, function (err) {
@@ -206,7 +206,7 @@ exports.addEvent = {
 		});
 	}
 };
-exports.removeEvent = {
+exports.deleteEvent = {
 	handler: function (request, reply) {
 		var events = person.find({ IDPerson: request.params.IDPerson });
 		events.update({ $pull: { events: request.payload.event } }, function (err) {
@@ -230,7 +230,7 @@ exports.addBusiness = {
 		});
 	}
 };
-exports.removeBusiness = {
+exports.deleteBusiness = {
 	handler: function (request, reply) {
 		var business = person.find({ IDPerson: request.params.IDPerson });
 		business.update({ $pull: { business: request.payload.business } }, function (err) {
