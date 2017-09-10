@@ -6,7 +6,8 @@ var groupSchema = new mongoose.Schema({
 	members: Array,
 	idChat: Number,
 	events: Array,
-	state: String
+	state: String,
+	image : String
 });
 
 module.exports = mongoose.model('Group', groupSchema);

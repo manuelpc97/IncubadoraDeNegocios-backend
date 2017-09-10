@@ -22,7 +22,8 @@ exports.createGroup = {
 					members: request.payload.members,
 					idChat: request.payload.idChat,
 					events: request.payload.events,
-					state: request.payload.state
+					state: request.payload.state,
+					image: request.payload.image
 				});
 
 				newGroup.save();

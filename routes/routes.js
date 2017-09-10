@@ -165,11 +165,6 @@ exports.endpoints = [
 		config: message.getMessages
 	},
 	{
-		method: 'GET',
-		path: '/getMessageByChat/{id}',
-		config: message.getMessageByChat
-	},
-	{
 		method: 'POST',
 		path: '/createTask',
 		config: task.createTask
