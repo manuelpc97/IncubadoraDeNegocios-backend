@@ -166,7 +166,7 @@ exports.endpoints = [
 	},
 	{
 		method: 'GET',
-		path: '/getMessageByChat',
+		path: '/getMessageByChat/{id}',
 		config: message.getMessageByChat
 	},
 	{
