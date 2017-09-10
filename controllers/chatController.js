@@ -38,6 +38,13 @@ exports.getChats = {
     }
 };
 
+exports.getChatByID = {
+	handler: function(request,reply){
+		var chatByID = person.find({IDChat: request.params.IDChat});
+		return reply(chatByID);
+	}
+};
+
 exports.deleteChat = {
     handler: function (request, reply) {
         var chatByID = chat.findOne({ IDChat: request.params.IDChat });

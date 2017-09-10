@@ -225,6 +225,11 @@ exports.endpoints = [
 		config: chat.getChats
 	},
 	{
+		method: 'GET',
+		path: '/getChatByID',
+		config: chat.getChatByID
+	},
+	{
 		method: 'DELETE',
 		path: '/IDN/deleteChat',
 		config: chat.deleteChat
@@ -263,6 +268,11 @@ exports.endpoints = [
 		method: 'GET',
 		path: '/IDN/getEventByName',
 		config: event.getEventByName
+	},
+	{
+		method: 'GET',
+		path: '/getEventByID',
+		config: event.getEventByID
 	},
 	{
 		method: 'DELETE',

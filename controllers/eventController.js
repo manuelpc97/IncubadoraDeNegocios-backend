@@ -56,8 +56,15 @@ exports.deleteEvent = {
 
 exports.getEventByName = {
     handler: function (request, reply) {
-        var eventByName = person.find({ name: request.params.name });
+        var eventByName = person.find({ IDEvent: request.params.IDEvent });
         reply(eventByName);
+    }
+};
+
+exports.getEventByID = {
+    handler: function (request, reply) {
+        var eventByID = person.find({ name: request.params.name });
+        reply(eventByID);
     }
 };
 
