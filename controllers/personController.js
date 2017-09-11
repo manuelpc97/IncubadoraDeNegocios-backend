@@ -135,6 +135,13 @@ exports.getPersonByProfession = {
 	}
 };
 
+exports.getPersonById = {
+	handler: function(request,reply){
+		var personById = person.find({IDPerson: request.params.IDPerson});
+		return reply(personById);
+	}
+};
+
 exports.getPersonByAddress = {
 	handler: function (request, reply) {
 		var personByAddress = person.find({ address: request.params.address });

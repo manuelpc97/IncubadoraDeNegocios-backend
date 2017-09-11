@@ -348,5 +348,10 @@ exports.endpoints = [
 		method: 'PUT',
 		path: '/deleteBusinessFromPerson/{IDPerson}',
 		config: person.deleteBusiness
+	}, 
+	{
+		method: 'GET', 
+		path: '/getPersonById/{IDPerson}', 
+		config: person.getPersonById
 	}	
 ]
