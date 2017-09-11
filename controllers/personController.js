@@ -41,6 +41,9 @@ exports.createPerson = {
 						address: request.payload.address,
 						image: request.payload.image,
 						listOfFriends: request.payload.listOfFriends,
+						listOfGroups: request.payload.listOfGroups,
+						listOfEvents: request.payload.listOfEvents,
+						listOfBusiness: request.payload.listOfBusiness
 					});
 
 					if (unique) {
@@ -67,7 +70,7 @@ exports.getPeople = {
 exports.editPerson = {
 	handler: function (request, reply) {
 		var Person = person.find({ IDPerson: request.params.IDPerson });
-		temp.update({ $set: request.payload }, function (err) {
+		Person.update({ $set: request.payload }, function (err) {
 			if (err) {
 				reply('Error');
 			} else {
@@ -100,7 +103,7 @@ exports.getPersonByName = {
 exports.getPersonByUsername = {
 	handler: function (request, reply) {
 		var personByUsername = person.find({ username: request.params.username });
-		reply(personByName);
+		reply(personByUsername);
 	}
 };
 
@@ -166,82 +169,76 @@ exports.deleteFriend = {
 };
 
 exports.addGroup = {
-	handler: function(request,reply){
-		var groups = person.find({IDPerson: request.params.IDPerson});
-		groups.update({$push: {groups: request.payload.group}},
-			function(err){
-				if(err){
-					reply('Error');
-				}else{
-					reply('Ok');
-				}
-			});
+	handler: function (request, reply) {
+		var groups = person.find({ IDPerson: request.params.IDPerson });
+		groups.update({ $push: { groups: request.payload.group } }, function (err) {
+			if (err) {
+				reply('Error');
+			} else {
+				reply('Group added');
+			}
+		});
 	}
 };
 
-exports.removeGroup = {
-	handler: function(request,reply){
-		var groups = person.find({IDPerson: request.params.IDPerson});
-		groups.update({$pull: {groups: request.payload.group}},
-			function(err){
-				if(err){
-					reply('Error');
-				}else{
-					reply('Ok');
-				}
-			});
+exports.deleteGroup = {
+	handler: function (request, reply) {
+		var groups = person.find({ IDPerson: request.params.IDPerson });
+		groups.update({ $pull: { groups: request.payload.group } }, function (err) {
+			if (err) {
+				reply('Error');
+			} else {
+				reply('Group deleted');
+			}
+		});
 	}
 };
 
 exports.addEvent = {
-	handler: function(request,reply){
-		var events = person.find({IDPerson: request.params.IDPerson});
-		events.update({$push: {events: request.payload.event}},
-			function(err){
-				if(err){
-					reply('Error');
-				}else{
-					reply('Ok');
-				}
-			});
+	handler: function (request, reply) {
+		var events = person.find({ IDPerson: request.params.IDPerson });
+		events.update({ $push: { events: request.payload.event } }, function (err) {
+			if (err) {
+				reply('Error');
+			} else {
+				reply('Event added');
+			}
+		});
 	}
 };
-exports.removeEvent = {
-	handler: function(request,reply){
-		var events = person.find({IDPerson: request.params.IDPerson});
-		events.update({$pull: {events: request.payload.event}},
-			function(err){
-				if(err){
-					reply('Error');
-				}else{
-					reply('Ok');
-				}
-			});
+exports.deleteEvent = {
+	handler: function (request, reply) {
+		var events = person.find({ IDPerson: request.params.IDPerson });
+		events.update({ $pull: { events: request.payload.event } }, function (err) {
+			if (err) {
+				reply('Error');
+			} else {
+				reply('Event deleted');
+			}
+		});
 	}
 };
 exports.addBusiness = {
-	handler: function(request,reply){
-		var business = person.find({IDPerson: request.params.IDPerson});
-		business.update({$push: {business: request.payload.business}},
-			function(err){
-				if(err){
-					reply('Error');
-				}else{
-					reply('Ok');
-				}
-			});
+	handler: function (request, reply) {
+		var business = person.find({ IDPerson: request.params.IDPerson });
+		business.update({ $push: { business: request.payload.business } }, function (err) {
+			if (err) {
+				reply('Error');
+			} else {
+				reply('Ok');
+			}
+		});
 	}
 };
-exports.removeBusiness = {
-	handler: function(request,reply){
-		var business = person.find({IDPerson: request.params.IDPerson});
-		business.update({$pull: {business: request.payload.business}},
-			function(err){
-				if(err){
-					reply('Error');
-				}else{
-					reply('Ok');
-				}
-			});
+exports.deleteBusiness = {
+	handler: function (request, reply) {
+		var business = person.find({ IDPerson: request.params.IDPerson });
+		business.update({ $pull: { business: request.payload.business } }, function (err) {
+			if (err) {
+				reply('Error');
+			} else {
+				reply('Ok');
+			}
+		});
 	}
 };

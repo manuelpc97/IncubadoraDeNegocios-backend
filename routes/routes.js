@@ -327,7 +327,7 @@ exports.endpoints = [
 	{
 		method: 'PUT',
 		path: '/deleteGroupFromPerson/{IDPerson}',
-		config: person.removeGroup
+		config: person.deleteGroup
 	},
 	{
 		method: 'PUT',
@@ -337,7 +337,7 @@ exports.endpoints = [
 	{
 		method: 'PUT',
 		path: '/deleteEventFromPerson/{IDPerson}',
-		config: person.removeEvent
+		config: person.deleteEvent
 	},
 	{
 		method: 'PUT',
@@ -347,6 +347,6 @@ exports.endpoints = [
 	{
 		method: 'PUT',
 		path: '/deleteBusinessFromPerson/{IDPerson}',
-		config: person.removeBusiness
+		config: person.deleteBusiness
 	}	
 ]
