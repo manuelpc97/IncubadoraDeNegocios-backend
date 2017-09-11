@@ -39,7 +39,7 @@ exports.createPerson = {
 						phone: request.payload.phone,
 						profession: request.payload.profession,
 						address: request.payload.address,
-						image: request.payload.address,
+						image: request.payload.image,
 						listOfFriends: request.payload.listOfFriends,
 					});
 
