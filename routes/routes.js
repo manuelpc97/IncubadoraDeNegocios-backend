@@ -16,242 +16,212 @@ exports.endpoints = [
 	},
 	{
 		method: 'POST',
-		path: '/IDN/createPerson',
+		path: '/IDN/Person',
 		config: person.createPerson
 	},
 	{
 		method: 'PUT',
-		path: '/IDN/editPerson',
+		path: '/IDN/Person/{IDPerson}',
 		config: person.editPerson
 	},
 	{
 		method: 'DELETE',
-		path: '/IDN/deletePerson/{IDPerson}',
+		path: '/IDN/Person/{IDPerson}',
 		config: person.deletePerson
 	},
 	{
 		method: 'GET',
-		path: '/IDN/getPeople',
+		path: '/IDN/People',
 		config: person.getPeople
 	},
 	{
 		method: 'GET',
-		path: '/IDN/getPersonByName',
+		path: '/IDN/Person/{name}',
 		config: person.getPersonByName
 	},
 	{
-		method: 'GET',
-		path: '/IDN/getPersonByAge',
-		config: person.getPersonByAge
-	},
-	{
-		method: 'GET',
-		path: '/IDN/getPersonByEmail',
-		config: person.getPersonByEmail
-	},
-	{
-		method: 'GET',
-		path: '/IDN/getPersonByPhone',
-		config: person.getPersonByPhone
-	},
-	{
-		method: 'GET',
-		path: '/IDN/getPersonByProfession',
-		config: person.getPersonByProfession
-	},
-	{
-		method: 'GET',
-		path: '/IDN/getPersonByAddress',
-		config: person.getPersonByAddress
-	},
-	{
-		method: 'GET',
-		path: '/IDN/getPersonByUsername',
-		config: person.getPersonByUsername
-	},
-	{
 		method: 'PUT',
-		path: '/IDN/addFriend',
+		path: '/IDN/addFriend/{IDPerson}',
 		config: person.addFriend
 	},
 	{
 		method: 'PUT',
-		path: '/IDN/deleteFriend',
+		path: '/IDN/deleteFriend/{IDPerson}',
 		config: person.deleteFriend
 	},
 	{
 		method: 'POST',
-		path: '/createBusiness',
+		path: '/IDN/Business',
 		config: business.createBusiness
 	},
 	{
 		method: 'GET',
-		path: '/getBusiness',
+		path: '/IDN/Business',
 		config: business.getBusiness
 	},
 	{
 		method: 'PUT',
-		path: '/updateBusiness/{id}',
+		path: '/IDN/Business/{id}',
 		config: business.updateBusiness
 	},
 	{
 		method: 'DELETE',
-		path: '/deleteBusiness/{id}',
+		path: '/IDN/Business/{id}',
 		config: business.deleteBusiness
 	},
 	{
 		method: 'GET',
-		path: '/getBusinessByCode/{code}',
+		path: '/IDN/BusinessByCode/{code}',
 		config: business.getBusinessByCode
 	},
 	{
 		method: 'GET', 
-		path: '/getBusinessById/{id}', 
+		path: '/IDN/BusinessById/{id}', 
 		config: business.getBusinessById
 	},
 	{
 		method: 'PUT',
-		path: '/addBusinessOwner/{id}',
+		path: '/IDN/addBusinessOwner/{id}',
 		config: business.addOwner
 	},
 	{
 		method: 'PUT',
-		path: '/removeBusinessOwner/{id}',
+		path: '/IDN/removeBusinessOwner/{id}',
 		config: business.removeOwner
 	},
 	{
 		method: 'POST',
-		path: '/createGroup',
+		path: '/IDN/Group',
 		config: group.createGroup
 	},
 	{
 		method: 'GET',
-		path: '/getGroups',
+		path: '/IDN/Groups',
 		config: group.getGroups
 	},
 	{
 		method: 'GET',
-		path: '/getGroupById/{id}',
+		path: '/IDN/Group/{id}',
 		config: group.getGroupById
 	},
 	{
 		method: 'PUT',
-		path: '/updateGroup/{id}',
+		path: '/IDN/Group/{id}',
 		config: group.updateGroup
 	},
 	{
 		method: 'DELETE',
-		path: '/deleteGroup/{id}',
+		path: '/IDN/Group/{id}',
 		config: group.deleteGroup
 	},
 	{
 		method: 'PUT',
-		path: '/addGroupMember/{id}',
+		path: '/IDN/addGroupMember/{id}',
 		config: group.addMember
 	},
 	{
 		method: 'PUT',
-		path: '/addGroupEvent/{id}',
+		path: '/IDN/addGroupEvent/{id}',
 		config: group.addEvent
 	},
 	{
 		method: 'PUT',
-		path: '/removeGroupMember/{id}',
+		path: '/IDN/removeGroupMember/{id}',
 		config: group.removeMember
 	},
 	{
 		method: 'PUT',
-		path: '/removeGroupEvent/{id}',
+		path: '/IDN/removeGroupEvent/{id}',
 		config: group.removeEvent
 	},
 	{
 		method: 'POST',
-		path: '/createMessage',
+		path: '/IDN/Message',
 		config: message.createMessage
 	},
 	{
 		method: 'GET',
-		path: '/getMessages',
+		path: '/IDN/Messages',
 		config: message.getMessages
 	},
 	{
 		method: 'POST',
-		path: '/createTask',
+		path: '/IDN/Task',
 		config: task.createTask
 	},
 	{
 		method: 'GET',
-		path: '/getTasks',
+		path: '/IDN/Tasks',
 		config: task.getTasks
 	},
 	{
 		method: 'GET',
-		path: '/getTasksByAdviser/{id}',
+		path: '/IDN/TasksByAdviser/{id}',
 		config: task.getTasksByAdviser
 	},
 	{
 		method: 'GET', 
-		path: '/getMessageById/{id}', 
+		path: '/IDN/MessageById/{id}', 
 		config: message.getMessageById
 	},
 	{
 		method: 'GET',
-		path: '/getTasksByBusiness/{id}',
+		path: '/IDN/TasksByBusiness/{id}',
 		config: task.getTasksByBusiness
 	},
 	{
 		method: 'GET',
-		path: '/getTasksByAdviserAndBusiness/{idA},{idB}',
+		path: '/IDN/TasksByAdviserAndBusiness/{idA},{idB}',
 		config: task.getTasksByAdviserAndBusiness
 	},
 	{
 		method: 'PUT',
-		path: '/updateTask/{id}',
+		path: '/IDN/Task/{id}',
 		config: task.updateTask
 	},
 	{
 		method: 'DELETE',
-		path: '/deleteTask/{id}',
+		path: '/IDN/Task/{id}',
 		config: task.deleteTask
 	},
 	{
 		method: 'POST',
-		path: '/IDN/createChat',
+		path: '/IDN/Chat',
 		config: chat.createChat
 	},
 	{
 		method: 'GET',
-		path: '/IDN/getChats',
+		path: '/IDN/Chats',
 		config: chat.getChats
 	},
 	{
 		method: 'GET',
-		path: '/getChatByID',
+		path: '/IDN/ChatByID/{IDChat}',
 		config: chat.getChatByID
 	},
 	{
 		method: 'DELETE',
-		path: '/IDN/deleteChat',
+		path: '/IDN/Chat/{IDChat}',
 		config: chat.deleteChat
 	},
 	{
 		method: 'PUT',
-		path: '/IDN/deletePersonInChat',
+		path: '/IDN/PersonInChat/{IDChat}',
 		config: chat.deletePersonInChat
 	},
 	{
 		method: 'PUT',
-		path: '/IDN/deleteMessageInChat',
+		path: '/IDN/MessageInChat/{IDChat}',
 		config: chat.deleteMessageInChat
 	},
 	{
 		method: 'PUT',
-		path: '/IDN/addPersonToChat',
+		path: '/IDN/PersonToChat/{IDChat}',
 		config: chat.addPersonToChat
 	},
 	{
 		method: 'PUT',
-		path: '/IDN/addMessageToChat',
+		path: '/IDN/MessageToChat/{IDChat}',
 		config: chat.addMessageToChat
 	},
 	{
@@ -261,62 +231,57 @@ exports.endpoints = [
 	},
 	{
 		method: 'GET',
-		path: '/IDN/getEvents',
+		path: '/IDN/Events',
 		config: event.getEvents
 	},
 	{
 		method: 'GET',
-		path: '/IDN/getEventByName',
+		path: '/IDN/EventByName/{name}',
 		config: event.getEventByName
 	},
 	{
 		method: 'GET',
-		path: '/getEventByID',
+		path: '/IDN/EventByID/{IDEvent}',
 		config: event.getEventByID
 	},
 	{
 		method: 'DELETE',
-		path: '/IDN/deleteEvent',
+		path: '/IDN/Event/{IDEvent}',
 		config: event.deleteEvent
 	},
 	{
 		method: 'PUT',
-		path: '/IDN/editEvent',
+		path: '/IDN/Event/{IDEvent}',
 		config: event.editEvent
 	},
 	{
 		method: 'PUT',
-		path: '/IDN/addPersonToEvent',
+		path: '/IDN/PersonToEvent/{IDEvent}',
 		config: event.addPersonToEvent
 	},
 	{
 		method: 'PUT',
-		path: '/IDN/deletePersonInEvent',
+		path: '/IDN/PersonInEvent/{IDEvent}',
 		config: event.deletePersonInEvent
 	},
 	{
 		method: 'POST',
-		path: '/IDN/createAdvertisement',
+		path: '/IDN/Advertisement',
 		config: advertisement.createAdvertisement
 	},
 	{
 		method: 'GET',
-		path: '/IDN/getAdvertisements',
+		path: '/IDN/Advertisements',
 		config: advertisement.getAdvertisements
 	},
 	{
-		method: 'GET',
-		path: '/IDN/getAdvertisementByName',
-		config: advertisement.getAdvertisementByName
-	},
-	{
 		method: 'PUT',
-		path: '/IDN/editAdvertisement',
+		path: '/IDN/Advertisement/{IDAdvertisement}',
 		config: advertisement.editAdvertisement
 	},
 	{
 		method: 'DELETE',
-		path: '/IDN/deleteAdvertisement',
+		path: '/IDN/Advertisement/{IDAdvertisement}',
 		config: advertisement.deleteAdvertisement
 	},
 	{
@@ -331,37 +296,37 @@ exports.endpoints = [
 	},
 	{
 		method: 'PUT',
-		path: '/addGroupToPerson/{IDPerson}',
+		path: '/IDN/GroupToPerson/{IDPerson}',
 		config: person.addGroup
 	},
 	{
 		method: 'PUT',
-		path: '/deleteGroupFromPerson/{IDPerson}',
+		path: '/IDN/GroupFromPerson/{IDPerson}',
 		config: person.deleteGroup
 	},
 	{
 		method: 'PUT',
-		path: '/addEventToPerson/{IDPerson}',
+		path: '/IDN/EventToPerson/{IDPerson}',
 		config: person.addEvent
 	},
 	{
 		method: 'PUT',
-		path: '/deleteEventFromPerson/{IDPerson}',
+		path: '/IDN/EventFromPerson/{IDPerson}',
 		config: person.deleteEvent
 	},
 	{
 		method: 'PUT',
-		path: '/addBusinessToPerson/{IDPerson}',
+		path: '/IDN/BusinessToPerson/{IDPerson}',
 		config: person.addBusiness
 	},
 	{
 		method: 'PUT',
-		path: '/deleteBusinessFromPerson/{IDPerson}',
+		path: '/IDN/BusinessFromPerson/{IDPerson}',
 		config: person.deleteBusiness
 	}, 
 	{
 		method: 'GET', 
-		path: '/getPersonById/{IDPerson}', 
+		path: '/IDN/PersonById/{IDPerson}', 
 		config: person.getPersonById
 	}	
 ]
