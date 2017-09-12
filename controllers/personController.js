@@ -206,8 +206,6 @@ exports.addBusiness = {
 };
 exports.deleteBusiness = {
 	handler: function (request, reply) {
-		console.log('Aqui tambien');
-		console.log(request.params.business);
 		var business = person.find({ IDPerson: request.params.IDPerson });
 		business.update({ $pull: { listOfBusiness: request.payload.business } }, function (err) {
 			if (err) {
