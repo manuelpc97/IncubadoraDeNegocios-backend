@@ -100,41 +100,6 @@ exports.getPersonByName = {
 	}
 };
 
-exports.getPersonByUsername = {
-	handler: function (request, reply) {
-		var personByUsername = person.find({ username: request.params.username });
-		reply(personByUsername);
-	}
-};
-
-exports.getPersonByAge = {
-	handler: function (request, reply) {
-		var personByAge = person.find({ age: request.params.age });
-		reply(personByAge);
-	}
-};
-
-exports.getPersonByEmail = {
-	handler: function (request, reply) {
-		var personByEmail = person.find({ email: request.params.email });
-		reply(personByEmail);
-	}
-};
-
-exports.getPersonByPhone = {
-	handler: function (request, reply) {
-		var personByPhone = person.find({ phone: request.params.phone });
-		reply(personByPhone);
-	}
-};
-
-exports.getPersonByProfession = {
-	handler: function (request, reply) {
-		var personByProfession = person.find({ profession: request.params.profession });
-		reply(personByProfession);
-	}
-};
-
 exports.getPersonById = {
 	handler: function(request,reply){
 		var personById = person.find({IDPerson: request.params.IDPerson});

@@ -39,13 +39,6 @@ exports.getAdvertisements = {
     }
 };
 
-exports.getAdvertisementByName = {
-    handler: function (request, reply) {
-        var advertisementByName = advertisement.find({ name: request.params.name });
-        reply(advertisementByName);
-    }
-};
-
 exports.editAdvertisement = {
     handler: function (request, reply) {
         var Advertisement = advertisement.find({ IDAdvertisement: request.params.IDAdvertisement });
