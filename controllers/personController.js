@@ -40,6 +40,7 @@ exports.createPerson = {
 						profession: request.payload.profession,
 						address: request.payload.address,
 						image: request.payload.image,
+						isAdviser: request.payload.isAdviser,
 						listOfFriends: request.payload.listOfFriends,
 						listOfGroups: request.payload.listOfGroups,
 						listOfEvents: request.payload.listOfEvents,

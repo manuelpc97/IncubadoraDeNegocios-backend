@@ -13,6 +13,7 @@ var personSchema = new mongoose.Schema({
 	profession: String,
 	address: String,
 	image: String,
+	isAdviser: Boolean,
 	listOfFriends: [Number],
 	listOfGroups: [Number],
 	listOfEvents: [Number],
