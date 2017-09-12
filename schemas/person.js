@@ -13,10 +13,10 @@ var personSchema = new mongoose.Schema({
 	profession: String,
 	address: String,
 	image: String,
-	listOfFriends: Array,
-	listOfGroups: Array,
-	listOfEvents: Array,
-	listOfBusiness: Array
+	listOfFriends: [Number],
+	listOfGroups: [Number],
+	listOfEvents: [Number],
+	listOfBusiness: [Number]
 });
 
 personSchema.plugin(uniqueValidator);

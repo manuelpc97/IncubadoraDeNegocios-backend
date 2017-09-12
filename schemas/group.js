@@ -3,9 +3,9 @@ var mongoose = require('mongoose');
 var groupSchema = new mongoose.Schema({
 	idGroup: Number,
 	name: String,
-	members: Array,
+	members: [Number],
 	idChat: Number,
-	events: Array,
+	events: [Number],
 	state: String,
 	image : String
 });

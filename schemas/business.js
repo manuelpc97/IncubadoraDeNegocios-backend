@@ -7,7 +7,7 @@ var businessSchema = new mongoose.Schema({
 	location: String,
 	description: String,
 	image: String,
-	idOwners: Array
+	idOwners: [Number]
 });
 
 module.exports = mongoose.model('Business', businessSchema);

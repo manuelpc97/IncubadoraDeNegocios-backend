@@ -5,7 +5,7 @@ var eventSchema = new mongoose.Schema({
     name: String,
     description: String,
     dateAndTime: Date,
-    listOfPeople: Array,
+    listOfPeople: [Number],
     status: Boolean  
 });
 
