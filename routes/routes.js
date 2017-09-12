@@ -21,7 +21,7 @@ exports.endpoints = [
 	},
 	{
 		method: 'PUT',
-		path: '/IDN/editPerson',
+		path: '/IDN/editPerson/{IDPerson}',
 		config: person.editPerson
 	},
 	{

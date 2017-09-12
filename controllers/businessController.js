@@ -1,10 +1,9 @@
 var business = require('../schemas/business');
 
 exports.createBusiness = {
-    auth: {
-        mode:'required',
-        strategy:'session',
-        scope: ['admin', 'regular']
+   auth: {
+        mode:'try',
+        strategy:'session'
       },
 	handler: function(request,reply){
         business.find({},'idBusiness code',
