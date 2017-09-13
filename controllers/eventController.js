@@ -16,7 +16,7 @@ exports.createEvent = {
                 } else {
                     ID = IDE[0].IDEvent + 1;
                 }
-                var newEvent = new person({
+                var newEvent = new event({
                     IDEvent: ID,
                     name: request.payload.name,
                     description: request.payload.description,
@@ -57,21 +57,21 @@ exports.deleteEvent = {
 
 exports.getEventByName = {
     handler: function (request, reply) {
-        var eventByName = person.find({ IDEvent: request.params.IDEvent });
+        var eventByName = event.find({ IDEvent: request.params.IDEvent });
         reply(eventByName);
     }
 };
 
 exports.getEventByID = {
     handler: function (request, reply) {
-        var eventByID = person.find({ name: request.params.name });
+        var eventByID = event.find({ name: request.params.name });
         reply(eventByID);
     }
 };
 
 exports.editEvent = {
     handler: function (request, reply) {
-        var event = group.find({ IDEvent: request.params.IDEvent });
+        var event = event.find({ IDEvent: request.params.IDEvent });
         event.update({ $set: request.payload }, function (err) {
             if (err) {
                 reply('Error');
