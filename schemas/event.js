@@ -6,7 +6,8 @@ var eventSchema = new mongoose.Schema({
     description: String,
     dateAndTime: Date,
     listOfPeople: [Number],
-    status: Boolean  
+    status: String,
+    image: String  
 });
 
 module.exports = mongoose.model('Event', eventSchema);

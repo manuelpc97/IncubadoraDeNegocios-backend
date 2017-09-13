@@ -2,11 +2,11 @@ var event = require('../schemas/event');
 
 
 exports.createEvent = {
-    auth: {
-        mode:'required',
-        strategy:'session',
-        scope: ['admin', 'regular']
-      },
+    //auth: {
+        //mode:'required',
+        //strategy:'session',
+        //scope: ['admin', 'regular']
+      //},
     handler: function (request, reply) {
         event.find({}, 'IDEvent', function (err, IDE) {
             if (!err) {
@@ -22,7 +22,8 @@ exports.createEvent = {
                     description: request.payload.description,
                     dateAndTime: request.payload.dateAndTime,
                     listOfPeople: request.payload.listOfPeople,
-                    status: request.payload.status
+                    status: request.payload.status,
+                    image: request.payload.image
                 });
 
                 newEvent.save();
