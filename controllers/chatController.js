@@ -16,7 +16,7 @@ exports.createChat = {
                 } else {
                     ID = IDC[0].IDChat + 1;
                 }
-                var newChat = new person({
+                var newChat = new chat({
                     IDChat: ID,
                     listOfPeople: request.payload.listOfPeople,
                     listOfMessages: request.payload.listOfMessages
@@ -40,7 +40,7 @@ exports.getChats = {
 
 exports.getChatByID = {
 	handler: function(request,reply){
-		var chatByID = person.find({IDChat: request.params.IDChat});
+		var chatByID = chat.find({IDChat: request.params.IDChat});
 		return reply(chatByID);
 	}
 };

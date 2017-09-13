@@ -64,7 +64,7 @@ exports.getEventByName = {
 
 exports.getEventByID = {
     handler: function (request, reply) {
-        var eventByID = event.find({ name: request.params.name });
+        var eventByID = event.find({ IDEvent: request.params.IDEvent });
         reply(eventByID);
     }
 };
@@ -85,7 +85,7 @@ exports.editEvent = {
 exports.addPersonToEvent = {
     handler: function (request, reply) {
         var events = event.find({ IDEvent: request.params.IDEvent });
-        events.update({ $push: { listOfPeople: request.payload.listOfPeople } }, function (err) {
+        events.update({ $push: { listOfPeople: request.payload.person } }, function (err) {
             if (err) {
                 reply('Error');
             } else {

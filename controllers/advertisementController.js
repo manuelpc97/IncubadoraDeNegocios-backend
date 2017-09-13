@@ -16,7 +16,7 @@ exports.createAdvertisement = {
                 } else {
                     ID = IDC[0].IDChat + 1;
                 }
-                var newAdvertisement = new person({
+                var newAdvertisement = new advertisement({
                     IDAdvertisement: ID,
                     name: request.payload.name,
                     description: request.payload.description,
