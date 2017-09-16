@@ -115,7 +115,7 @@ exports.removeMember = {
 exports.removeEvent = {
 	handler: function(request,reply){
 		var temp = group.find({idGroup: request.params.id});
-		temp.update({$pull: {members: request.payload.member}},
+		temp.update({$pull: {events: request.payload.event}},
 			function(err){
 				if(err){
 					reply('Error');
