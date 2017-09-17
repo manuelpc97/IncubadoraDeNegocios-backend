@@ -32,7 +32,8 @@ exports.createBusiness = {
                         location: request.payload.location,
                         description: request.payload.description,
                         image: request.payload.image,
-                        idOwners: request.payload.idOwners
+                        idOwners: request.payload.idOwners,
+                        tasks: request.payload.tasks
                     });
                     console.log(request.payload.count);
                     if(!exist){
@@ -112,6 +113,34 @@ exports.removeOwner = {
     handler: function(request,reply){
         var temp = business.find({idBusiness: request.params.id});
         temp.update({$pull: {idOwners: request.payload.owner}},
+            function(err){
+                if(err){
+                    reply('Error');
+                }else{
+                    reply('Ok');
+                }
+            });
+    }
+};
+
+exports.addTask = {
+    handler: function(request, reply){
+        var temp = business.find({idBusiness: request.params.id});
+        temp.update({$push: {tasks: request.payload.task}},
+            function(err){
+                if(err){
+                    reply('Error');
+                }else{
+                    reply('Ok');
+                }
+            });
+    }
+};
+
+exports.removeTask = {
+    handler: function(request,reply){
+        var temp = business.find({idBusiness: request.params.id});
+        temp.update({$pull: {tasks: request.payload.task}},
             function(err){
                 if(err){
                     reply('Error');

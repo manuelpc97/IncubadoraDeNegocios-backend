@@ -2,13 +2,13 @@ var chat = require('../schemas/chat');
 
 
 exports.createChat = {
-    auth: {
-        mode:'required',
-        strategy:'session',
-        scope: ['admin', 'regular']
-      },
+    //auth: {
+        //mode:'required',
+        //strategy:'session',
+        //scope: ['admin', 'regular']
+      //},
     handler: function (request, reply) {
-        event.find({}, 'IDChat', function (err, IDC) {
+        chat.find({}, 'IDChat', function (err, IDC) {
             if (!err) {
                 var ID = 0;
                 if (IDC[0] === undefined) {
