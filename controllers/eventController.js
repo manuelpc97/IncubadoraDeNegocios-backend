@@ -71,6 +71,8 @@ exports.getEventByID = {
 
 exports.editEvent = {
     handler: function (request, reply) {
+        console.log(request.params.IDEvent);
+        console.log(request.payload);
         var event2 = event.find({ IDEvent: request.params.IDEvent });
         event2.update({ $set: request.payload }, function (err) {
             if (err) {
