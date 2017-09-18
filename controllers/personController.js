@@ -44,7 +44,8 @@ exports.createPerson = {
 						listOfFriends: request.payload.listOfFriends,
 						listOfGroups: request.payload.listOfGroups,
 						listOfEvents: request.payload.listOfEvents,
-						listOfBusiness: request.payload.listOfBusiness
+						listOfBusiness: request.payload.listOfBusiness,
+						listOfRequests: request.payload.listOfRequests
 					});
 
 					if (unique) {
@@ -209,6 +210,31 @@ exports.deleteBusiness = {
 	handler: function (request, reply) {
 		var business = person.find({ IDPerson: request.params.IDPerson });
 		business.update({ $pull: { listOfBusiness: request.payload.business } }, function (err) {
+			if (err) {
+				reply('Error');
+			} else {
+				reply('Ok');
+			}
+		});
+	}
+};
+
+exports.addRequest = {
+	handler: function (request, reply) {
+		var business = person.find({ IDPerson: request.params.IDPerson });
+		business.update({ $push: { listOfRequests: request.payload.request } }, function (err) {
+			if (err) {
+				reply('Error');
+			} else {
+				reply('Ok');
+			}
+		});
+	}
+};
+exports.deleteRequest = {
+	handler: function (request, reply) {
+		var business = person.find({ IDPerson: request.params.IDPerson });
+		business.update({ $pull: { listOfRequests: request.payload.request } }, function (err) {
 			if (err) {
 				reply('Error');
 			} else {

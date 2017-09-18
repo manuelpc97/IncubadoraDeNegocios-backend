@@ -61,7 +61,8 @@ exports.deleteChat = {
 exports.addPersonToChat = {
     handler: function (request, reply) {
         var chats = chat.find({ IDChat: request.params.IDChat });
-        chats.update({ $push: { listOfPeople: request.payload.listOfPeople } }, function (err) {
+        chats.update({ $push: { listOfPeople: request.payload.listOfPeople}}, 
+            function (err) {
             if (err) {
                 reply('Error');
             } else {
@@ -86,8 +87,11 @@ exports.deletePersonInChat = {
 
 exports.addMessageToChat = {
     handler: function (request, reply) {
-        var chats = chat.find({ IDChat: request.params.IDChat });
-        chats.update({ $push: { listOfMessages: request.payload.listOfMessages } }, function (err) {
+        console.log(request.params.IDChat);
+        console.log(request.payload.message);
+        var chat2 = chat.find({ IDChat: request.params.IDChat});
+        chat2.update({$push: { listOfMessages: request.payload.message} }, 
+            function (err) {
             if (err) {
                 reply('Error');
             } else {

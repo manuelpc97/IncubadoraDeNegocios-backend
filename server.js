@@ -57,7 +57,7 @@ server.register([inert, auth], function(err){
            
 
         rl.question('Mensaje a enviar: ', (response) => {
-          pubnub.publish({channel: 'MyChannel', message: response},function(status,response){
+          pubnub.publish({channel: 'sending2', message: response},function(status,response){
             console.log(status,response);
           });
           rl.close();
@@ -66,7 +66,7 @@ server.register([inert, auth], function(err){
         });
 
         pubnub.subscribe({
-          channels: ['MyChannel']
+          channels: ['sending']
         });*/
         
   });

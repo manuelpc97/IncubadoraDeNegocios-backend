@@ -17,7 +17,8 @@ var personSchema = new mongoose.Schema({
 	listOfFriends: [Number],
 	listOfGroups: [Number],
 	listOfEvents: [Number],
-	listOfBusiness: [Number]
+	listOfBusiness: [Number],
+	listOfRequests: [Number]
 });
 
 personSchema.plugin(uniqueValidator);
