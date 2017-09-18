@@ -328,6 +328,16 @@ exports.endpoints = [
 		config: person.deleteBusiness
 	}, 
 	{
+		method: 'PUT',
+		path: '/IDN/RequestToPerson/{IDPerson}',
+		config: person.addRequest
+	},
+	{
+		method: 'PUT',
+		path: '/IDN/RequestFromPerson/{IDPerson}',
+		config: person.deleteRequest
+	},
+	{
 		method: 'GET', 
 		path: '/IDN/PersonById/{IDPerson}', 
 		config: person.getPersonById
