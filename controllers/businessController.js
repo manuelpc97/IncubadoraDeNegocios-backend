@@ -20,7 +20,7 @@ exports.createBusiness = {
                         id = idB[0].idBusiness+1;
                         while(idB[counter] != undefined){
                             if(idB[counter].code === request.payload.code){
-                                exist = true;
+                                //exist = true;
                             }
                             counter++;
                         }
@@ -35,6 +35,7 @@ exports.createBusiness = {
                         idOwners: request.payload.idOwners,
                         tasks: request.payload.tasks
                     });
+                    console.log('new', newBusiness);
                     console.log(request.payload.count);
                     if(!exist){
                         newBusiness.save();
