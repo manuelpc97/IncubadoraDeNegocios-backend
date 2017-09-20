@@ -29,6 +29,7 @@ server.register([inert, auth], function(err){
     ttl: 24 * 60 * 60 * 1000, // Set session to 1 day
     isSecure: false
   });
+ 
 
   server.route(routes.endpoints);
   console.log(routes.endpoints.length);
