@@ -11,7 +11,6 @@ server.connection({
     routes: {cors: true}
 });
 
-//mongoose.connect('mongodb://localhost:27017/IncubadoraDeNegocios');
 //mongoose.connect('mongodb://127.0.0.1:27017/IncubadoraDeNegocios');
 mongoose.conect(mongodb:\/\/manuelpc97:Warrior97-@ds139884.mlab.com:39884/pruebaincubadora);
 var db = mongoose.connection;
