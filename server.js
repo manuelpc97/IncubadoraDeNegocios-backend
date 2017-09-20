@@ -12,7 +12,7 @@ server.connection({
 });
 
 //mongoose.connect('mongodb://127.0.0.1:27017/IncubadoraDeNegocios');
-mongoose.connect('mongodb://manuelpc97:Warrior97-@ds139884.mlab.com:39884/pruebaincubadora');
+mongoose.connect('mongodb://manupc97:Warrior97-@ds139884.mlab.com:39884/pruebaincubadora');
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error'));
 db.once('open', function callback() {
