@@ -2,19 +2,14 @@ var advertisement = require('../schemas/advertisement');
 
 
 exports.createAdvertisement = {
-    auth: {
-        mode:'required',
-        strategy:'session',
-        scope: ['admin', 'regular']
-      },
     handler: function (request, reply) {
         advertisement.find({}, 'IDAdvertisement', function (err, IDA) {
             if (!err) {
                 var ID = 0;
-                if (IDC[0] === undefined) {
+                if (IDA[0] === undefined) {
                     ID = 1;
                 } else {
-                    ID = IDC[0].IDChat + 1;
+                    ID = IDA[0].IDAdvertisement + 1;
                 }
                 var newAdvertisement = new advertisement({
                     IDAdvertisement: ID,
@@ -22,7 +17,6 @@ exports.createAdvertisement = {
                     description: request.payload.description,
                     image: request.payload.image
                 });
-
                 newAdvertisement.save();
                 reply('Advertisement saved');
             } else {
@@ -35,7 +29,8 @@ exports.createAdvertisement = {
 exports.getAdvertisements = {
     handler: function (request, reply) {
         var advertisements = advertisement.find({});
-        return reply(advertisement);
+        console.log('aqui ' + advertisements);
+        return reply(advertisements);
     }
 };
 
