@@ -12,7 +12,7 @@ server.connection({
 });
 
 //mongoose.connect('mongodb://127.0.0.1:27017/IncubadoraDeNegocios');
-mongoose.connect('mongodb://manuel:manu@ds139884.mlab.com:39884/pruebaincubadora');
+mongoose.connect('mongodb://alexy:a1@ds139884.mlab.com:39884/pruebaincubadora');
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error'));
 db.once('open', function callback() {
@@ -34,9 +34,7 @@ server.register([inert, auth], function(err){
   
 
   server.start(function () {
-      console.log('Server running at:', server.info.uri);
-   
-        
+      console.log('Server running at:', server.info.uri); 
   });
 });
 
